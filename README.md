@@ -1,5 +1,7 @@
 # wp-to-html (WhatsApp to HTML) `v1.1`
 
+Whatsapp indirilen arşivi web sayfasına dönüştürür. İçinden vaka seçtirip ayrı web sayfası olarak kaydetmeye yarar.
+
 WhatsApp üzerinden yürütülen tıbbi vaka tartışmalarını, eğitim ve sunum amacıyla profesyonel, anonim ve taranabilir bir HTML arşivine dönüştüren masaüstü uygulamasıdır. Özellikle mikroskobik görüntüler ve radyolojik tetkiklerin yoğun paylaşıldığı gruplar için optimize edilmiştir.
 
 
