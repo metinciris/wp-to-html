@@ -1,19 +1,29 @@
-# wp-to-html (WhatsApp to HTML) `v1.1`
+# 📁 Anonim WhatsApp Vaka Arşivi (wp-to-html) `v1.0`
 
-Whatsapp indirilen arşivi web sayfasına dönüştürür. İçinden vaka seçtirip ayrı web sayfası olarak kaydetmeye yarar.
-
-WhatsApp üzerinden yürütülen tıbbi vaka tartışmalarını, eğitim ve sunum amacıyla profesyonel, anonim ve taranabilir bir HTML arşivine dönüştüren masaüstü uygulamasıdır. Özellikle mikroskobik görüntüler ve radyolojik tetkiklerin yoğun paylaşıldığı gruplar için optimize edilmiştir.
+WhatsApp üzerinden paylaşılan tıbbi vaka tartışmalarını, eğitim ve sunum amacıyla profesyonel, **anonim** ve taranabilir bir HTML arşivine dönüştüren masaüstü uygulamasıdır. Özellikle patoloji, radyoloji gibi mikroskobik veya radyolojik görüntülerin yoğun paylaşıldığı uzmanlık alanları için optimize edilmiştir.
 
 
 
 ## ✨ Öne Çıkan Özellikler
 
-* **🔍 Akıllı Mikroskop Zoom:** Fare tekerleği (mouse wheel) ile görüntülere yüksek çözünürlüklü yakınlaştırma.
-* **👤 Gelişmiş Anonimlik:** Tek tıkla tüm isimleri gizleme/gösterme özelliği (KVKK uyumlu paylaşım için).
-* **📂 Seçici Paketleme (Vaka Modu):** Yüzlerce mesaj arasından sadece ilgili vakayı seçip, resimleriyle birlikte ayrı bir klasöre "mini-arşiv" olarak çıkarma.
-* **📦 Tam Yedekleme:** Tüm sohbeti tek tıkla medya dosyalarıyla birlikte HTML formatında paketleme.
-* **🏷️ Altyazı Entegrasyonu:** Resimlerin hemen altına yazılan "CD56", "PanCK", "Kromo" gibi notları otomatik olarak galeri moduna (caption) taşıma.
-* **🎨 Modern Arayüz:** Göz yormayan antrasit/safir teması ve okunaklı tipografi.
+* **👤 Gelişmiş Anonimlik:** Tek tıkla gönderici isimlerini gizleme/gösterme. İsimler gizliyken yapılan paketlemeler tamamen anonim (KVKK uyumlu) olarak kaydedilir.
+* **🔍 Akıllı Mikroskop Zoom:** Fare tekerleği (mouse wheel) ile görüntülere yüksek çözünürlüklü yakınlaştırma (%2000'e kadar).
+* **📂 Seçici Paketleme (Vaka Modu):** Yüzlerce mesaj arasından sadece ilgili vakayı seçip, resimleriyle birlikte ayrı bir "vaka klasörü" olarak çıkarma.
+* **📦 Tam Yedekleme:** Tüm sohbeti tek tıkla medya dosyalarıyla birlikte tek bir HTML sayfasında toplama.
+* **🏷️ Altyazı Entegrasyonu:** Resim altına yazılan "CD56", "PanCK", "Kromo" gibi notları otomatik algılar ve galeri modunda altyazı olarak gösterir.
+* **🎨 Modern & Pastel Arayüz:** Göz yormayan antrasit/safir teması, yüksek kontrast ve okunaklı tıbbi dokümantasyon stili.
+
+---
+
+## 📂 Klasör Yapısı
+
+Projeyi bilgisayarınıza indirdiğinizde aşağıdaki yapıyla karşılaşacaksınız:
+
+* **`src/`**: Uygulamanın Python kaynak kodu (`whatsapp_to_html.py`).
+* **`bin/`**: Python kurulu olmayan sistemler için hazır çalıştırılabilir uygulama (`.exe`).
+* **`assets/`**: Uygulama içi görseller ve ikonlar.
+
+---
 
 ## 🚀 Kurulum ve Kullanım
 
@@ -23,30 +33,33 @@ WhatsApp üzerinde ilgili sohbetin ayarlarına girin:
 * Gelen `.zip` dosyasını bir klasöre çıkartın.
 
 ### 2. Uygulamayı Çalıştırma
-Uygulama Python tabanlıdır. `whatsapp_to_html.py` (veya .pyw) dosyasını çalıştırın:
-```bash
-python whatsapp_to_html.py
-```
+* **Hızlı Kullanım:** `bin/Anonim_Whatsapp_Vaka_Arsivi.exe` dosyasını çalıştırın.
+* **Python ile Çalıştırma:**
+    ```bash
+    python src/whatsapp_to_html.py
+    ```
 
 ### 3. Arşivleme Adımları
-1.  **Klasör Seç:** WhatsApp'tan çıkarttığınız klasörü seçin.
-2.  **İncele:** Tarayıcıda açılan panelde vaka tartışmalarını inceleyin.
-3.  **Paketle:** * Sadece belirli mesajları istiyorsanız "Seçim Modu"nu açıp mesajları seçin ve **"Vakayı Paketle"** deyin.
-    * Tüm grubu arşivlemek için **"Herşeyi Paketle"** deyin.
+1.  **Klasör Seç:** WhatsApp'tan çıkarttığınız (içinde mesajlar ve resimler olan) klasörü seçin.
+2.  **İncele:** Tarayıcıda açılan panelde vakaları inceleyin. Arama kutusunu kullanarak tanı veya boya ismine göre filtreleme yapabilirsiniz.
+3.  **Paketle:**
+    * **Vakayı Paketle:** Seçim modunu açıp mesajları işaretleyin ve butona basın. Seçtiğiniz isimle ana dizinde yeni bir klasör oluşur.
+    * **Herşeyi Paketle:** Tüm sohbeti olduğu gibi yedeklemek için kullanın.
 
 
+
+---
 
 ## 🛠 Teknik Detaylar
 * **Dil:** Python 3.x
-* **Arayüz:** Tkinter (GUI) + HTML5/CSS3/JS (Web Dashboard)
-* **Sunucu:** Local Python HTTP Server (Verileriniz dışarı çıkmaz, tamamen yerel çalışır).
+* **Arayüz:** Tkinter (GUI) + HTML5/CSS3/JS (Dashboard)
+* **Güvenlik:** Local Python HTTP Server kullanılır. Verileriniz internete çıkmaz, tamamen kendi bilgisayarınızda işlenir.
 
 ## 📝 Versiyon Geçmişi
-* **v1.1:** Dinamik buton metinleri, tam anonimlik modu ve geliştirilmiş vaka seçim alanı eklendi.
-* **v1.0:** İlk kararlı sürüm; Zoom, Kaydırma ve Temel Paketleme özellikleri.
+* **v1.0:** İlk Kararlı Sürüm. Dinamik isim gizleme, vaka seçimi, gelişmiş zoom ve pastel tema iyileştirmeleri.
 
 ## 🤝 Katkıda Bulunma
-Bu proje tıbbi eğitim ve vaka paylaşımını kolaylaştırmak için geliştirilmiştir. Pull request göndererek veya "Issue" açarak katkıda bulunabilirsiniz.
+Bu proje tıbbi eğitim ve vaka paylaşımını kolaylaştırmak için geliştirilmiştir. Katkıda bulunmak isterseniz lütfen bir "Issue" açın veya Pull Request gönderin.
 
 ---
 **Geliştirici:** [Metin Çiriş](https://github.com/metinciris)  
