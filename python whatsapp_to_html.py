@@ -213,10 +213,10 @@ def run():
     webbrowser.open(f'http://localhost:{SERVER_PORT}')
 
 # --- ANA PENCERE ---
-root = tk.Tk(); root.title("Toraks Vaka Arşivi"); root.geometry("500x400")
+root = tk.Tk(); root.title("Whatsapp Vaka Arşivi"); root.geometry("500x400")
 root.configure(bg="#f8fafc")
 
-tk.Label(root, text="Toraks Vaka Arşivi", font=("Arial", 16, "bold"), bg="#f8fafc", fg="#1a202c", pady=20).pack()
+tk.Label(root, text="Whatsapp Vaka Arşivi", font=("Arial", 16, "bold"), bg="#f8fafc", fg="#1a202c", pady=20).pack()
 tk.Label(root, text=f"Versiyon {VERSION}", font=("Arial", 9), bg="#f8fafc", fg="#718096").pack()
 
 guide_text = """
